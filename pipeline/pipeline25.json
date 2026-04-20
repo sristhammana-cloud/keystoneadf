@@ -30,39 +30,6 @@
 					},
 					"firstRowOnly": true
 				}
-			},
-			{
-				"name": "Data flow1",
-				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [
-					{
-						"activity": "LKP_OldWatermark",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "dataflowincr_2",
-						"type": "DataFlowReference"
-					},
-					"compute": {
-						"coreCount": 32,
-						"computeType": "MemoryOptimized"
-					},
-					"traceLevel": "Fine"
-				}
 			}
 		],
 		"annotations": [],
