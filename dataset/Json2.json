@@ -1,0 +1,120 @@
+{
+	"name": "Json2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "dest folder",
+				"fileSystem": "silver"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"sno": {
+					"type": "string"
+				},
+				"YEAR": {
+					"type": "null"
+				},
+				"MONTH": {
+					"type": "string"
+				},
+				"DAY": {
+					"type": "string"
+				},
+				"DAY_OF_WEEK": {
+					"type": "string"
+				},
+				"AIRLINE": {
+					"type": "string"
+				},
+				"FLIGHT_NUMBER": {
+					"type": "string"
+				},
+				"TAIL_NUMBER": {
+					"type": "string"
+				},
+				"ORIGIN_AIRPORT": {
+					"type": "string"
+				},
+				"DESTINATION_AIRPORT": {
+					"type": "string"
+				},
+				"SCHEDULED_DEPARTURE": {
+					"type": "string"
+				},
+				"DEPARTURE_TIME": {
+					"type": "string"
+				},
+				"DEPARTURE_DELAY": {
+					"type": "string"
+				},
+				"TAXI_OUT": {
+					"type": "string"
+				},
+				"WHEELS_OFF": {
+					"type": "string"
+				},
+				"SCHEDULED_TIME": {
+					"type": "string"
+				},
+				"ELAPSED_TIME": {
+					"type": "string"
+				},
+				"AIR_TIME": {
+					"type": "string"
+				},
+				"DISTANCE": {
+					"type": "string"
+				},
+				"WHEELS_ON": {
+					"type": "string"
+				},
+				"TAXI_IN": {
+					"type": "string"
+				},
+				"SCHEDULED_ARRIVAL": {
+					"type": "string"
+				},
+				"ARRIVAL_TIME": {
+					"type": "string"
+				},
+				"ARRIVAL_DELAY": {
+					"type": "string"
+				},
+				"DIVERTED": {
+					"type": "string"
+				},
+				"CANCELLED": {
+					"type": "string"
+				},
+				"CANCELLATION_REASON": {
+					"type": "null"
+				},
+				"AIR_SYSTEM_DELAY": {
+					"type": "null"
+				},
+				"SECURITY_DELAY": {
+					"type": "null"
+				},
+				"AIRLINE_DELAY": {
+					"type": "null"
+				},
+				"LATE_AIRCRAFT_DELAY": {
+					"type": "null"
+				},
+				"WEATHER_DELAY": {
+					"type": "null"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

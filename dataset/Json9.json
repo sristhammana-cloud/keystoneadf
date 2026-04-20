@@ -1,0 +1,49 @@
+{
+	"name": "Json9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "poke.json",
+				"folderPath": "restapi",
+				"fileSystem": "silver"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"store_id": {
+					"type": "string"
+				},
+				"store_name": {
+					"type": "string"
+				},
+				"store_city": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				},
+				"category_focus": {
+					"type": "string"
+				},
+				"monthly_target": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"last_audit_date": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

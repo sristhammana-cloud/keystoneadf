@@ -1,0 +1,36 @@
+{
+	"name": "pipeline27",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/sris.thammana@gmail.com/freshmart_sales_filter",
+					"baseParameters": {
+						"city": "Chennai",
+						"min_amount": "7000",
+						"status": "Completed",
+						"report_date": "2026-04-11"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-04-11T16:08:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

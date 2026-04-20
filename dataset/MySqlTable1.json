@@ -1,0 +1,16 @@
+{
+	"name": "MySqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MySqlshashank",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "movies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

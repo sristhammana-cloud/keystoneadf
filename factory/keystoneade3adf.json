@@ -1,0 +1,20 @@
+{
+	"name": "keystoneade3adf",
+	"properties": {
+		"globalParameters": {
+			"apiaddress": {
+				"type": "string",
+				"value": "www.sandboxapi.com"
+			}
+		},
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		}
+	},
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "413977ac-1c86-48d7-bbf4-54110818f7c6",
+		"tenantId": "a43836e7-0fff-4207-b3b9-020409113e3c"
+	}
+}

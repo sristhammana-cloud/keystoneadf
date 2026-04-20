@@ -1,0 +1,80 @@
+{
+	"name": "dataflowincr_2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_Source_Orders_CSV",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Json12",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     parameter1 as string",
+				"}",
+				"source(output(",
+				"          OrderID as short,",
+				"          CustomerID as string,",
+				"          CustomerName as string,",
+				"          ProductID as string,",
+				"          ProductName as string,",
+				"          Category as string,",
+				"          Quantity as short,",
+				"          UnitPrice as double,",
+				"          TotalAmount as double,",
+				"          OrderDate as date,",
+				"          Status as string,",
+				"          LastModifiedDate as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"derivedColumn1 filter(greaterOrEqual(LastModifiedDate,toTimestamp($parameter1, 'yyyy-MM-dd\\'T\\'HH:mm:ss\\'Z\\''))) ~> filter1",
+				"source1 derive(LastModifiedDate = toTimestamp(LastModifiedDate, 'yyyy-MM-dd HH:mm:ss')) ~> derivedColumn1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1,",
+				"     mapColumn(",
+				"          OrderID,",
+				"          CustomerID,",
+				"          CustomerName,",
+				"          ProductID,",
+				"          ProductName,",
+				"          Category,",
+				"          Quantity,",
+				"          UnitPrice,",
+				"          TotalAmount,",
+				"          OrderDate,",
+				"          Status,",
+				"          LastModifiedDate",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
